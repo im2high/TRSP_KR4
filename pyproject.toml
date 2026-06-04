@@ -1,0 +1,27 @@
+[project]
+name = "fastapi-kr4"
+version = "1.0.0"
+description = "Контрольная работа №4. Технологии разработки серверных приложений."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.0",
+    "uvicorn[standard]==0.30.6",
+    "sqlalchemy==2.0.35",
+    "alembic==1.13.2",
+    "pydantic==2.9.2",
+    "pydantic-settings==2.5.2",
+    "email-validator==2.2.0",
+    "httpx==0.27.2",
+    "pytest==8.3.3",
+    "pytest-asyncio==0.24.0",
+    "Faker==30.1.0",
+]
+
+[project.optional-dependencies]
+# Драйвер PostgreSQL. Ставится только при необходимости:
+#   pip install -e ".[postgres]"
+postgres = ["psycopg[binary]==3.2.3"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
